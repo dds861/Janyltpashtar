@@ -76,7 +76,7 @@ public class MyAdapter extends ArrayAdapter<Product> {
                 sharingIntent.setType("text/plain");
                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject Here");
                 sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
-                context.startActivity(Intent.createChooser(sharingIntent, context.getString(R.string.share_using)));
+                getContext().startActivity(Intent.createChooser(sharingIntent, context.getString(R.string.share_using)));
             }
         });
 
