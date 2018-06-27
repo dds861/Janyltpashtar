@@ -72,11 +72,22 @@ public class MyAdapter extends ArrayAdapter<Product> {
                 makeAnimationOnView(R.id.ivShare, Techniques.FadeIn, 350, 0, view);
 
                 String shareBody = textView1.getText().toString();
-                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject Here");
-                sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
-                getContext().startActivity(Intent.createChooser(sharingIntent, context.getString(R.string.share_using)));
+
+                //here come the error on some devices
+//                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+//                sharingIntent.setType("text/plain");
+//                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject Here");
+//                sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
+//                getContext().startActivity(Intent.createChooser(sharingIntent, context.getString(R.string.share_using)));
+
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
+                sendIntent.setType("text/plain");
+                context.startActivity(Intent.createChooser(sendIntent, context.getText(R.string.share_using)));
+
+
+
             }
         });
 
