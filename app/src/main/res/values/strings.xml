@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Жаңылтпаштар жинағы</string>
+    <string name="search">Іздеу</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3941279894802307/2796685392</string>
+    <!--for testing-->
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>-->
+
+    <string name="share_using">Бөлісу</string>
+    <string name="TextCopied">Көшірілді</string>
+</resources>
