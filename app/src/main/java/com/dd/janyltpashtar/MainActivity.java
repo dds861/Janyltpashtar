@@ -67,15 +67,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
                 databaseAccess.open();
-                List<String> stringList = new ArrayList<>();
-                for (String str : databaseAccess.getList()) {
-                    if (str.trim().contains(newText))
-                        stringList.add(str);
-                }
+
 
                 List<Product> products = new ArrayList<>();
                 for (String stringJanyltpash : databaseAccess.getList()) {
-                    if (stringJanyltpash.trim().contains(newText)){
+                    if (stringJanyltpash.trim().toLowerCase().contains(newText.toLowerCase())){
                         products.add(new Product(stringJanyltpash));
                     }
                 }
